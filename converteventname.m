@@ -1,0 +1,19 @@
+function ename = converteventname(structname)
+% Converts event name from what's used in the data structs to what's in the
+% publication
+
+eventMap = struct( ...
+    'cpon',    'CP On', ...
+    'cpin',    'Offer Cue', ...
+    'sideon',  'Reward Port On', ...
+    'sideoff', 'Reward Cue', ...
+    'reward',  'Reward', ...
+    'optout',  'Opt Out');
+
+key = lower(structname);
+if isfield(eventMap, key)
+    ename = eventMap.(key);
+end
+
+
+end
